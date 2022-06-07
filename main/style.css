@@ -1,0 +1,1145 @@
+@font-face {
+	font-family: 'Georgia';
+	src: url('../../assets/fonts/Georgia.woff') format('woff');
+	font-display: swap;
+	font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'Arial';
+	src: url('../../assets/fonts/ArialMT.woff') format('woff');
+	font-display: swap;
+	font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+  
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: Georgia, serif;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+input, button {
+    font-family: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*Блок header*/
+
+.header {
+    margin: 0 auto;
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    width: 100%;
+    padding-top: 60px;
+    transform: translate(-50%, 0);
+}
+
+.header_wrapper {
+    padding: 0 40px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.logo_nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_logo a {
+    text-decoration: none;
+}
+
+.header_logo {
+    text-align: center;
+}
+
+.header_logo_title {
+    font-size: 32px;
+    color: #F1CDB3;
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.header_logo_subtitle {
+    font-family: 'Arial';
+    font-size: 13px;
+    color: #FFF;
+    letter-spacing: 0.1em;
+}
+
+.header_logo_in_burger {
+    display: none;
+    position: absolute;
+    right: 90px;
+}
+
+.header_logo_in_burger_visible {
+    display: block;
+}
+
+.header_list {
+    display: flex;
+}
+
+.header_list_item {
+    list-style-type: none;
+    margin-right: 30px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid transparent;
+    transition-duration: .5s;
+}
+
+.header_list_item:first-child {
+    border-bottom: 3px solid #F1CDB3;
+}
+
+.header_list_item:hover {
+    cursor: pointer;
+    border-bottom: 3px solid #F1CDB3;
+}
+
+.header_list_item:last-child {
+    margin-right: 0;
+}
+
+.header_list_link {
+    font-family: 'Arial';
+    text-decoration: none;
+    color: #CDCDCD;
+}
+
+.burger {
+    display: none;
+    --width: 30px;
+    --height: 21px;
+    --color: var(--main-bg-color);
+    --size-line: 2px;
+    position: relative;
+    width: var(--width);
+    height: var(--height);
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    z-index: 100;
+    transition: transform .3s, top .3s;
+  }
+
+.burger_line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: var(--size-line);
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #F1CDB3;
+}
+  
+.burger::before, .burger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: var(--size-line);
+    background-color: #F1CDB3;
+}
+  
+.burger:before {
+    top: 0;
+}
+  
+.burger:after {
+    top: calc(100% - var(--size-line));
+}
+  
+.burger_active {
+    transform: rotate(90deg);
+}
+
+/*Блок banner*/
+
+.banner {
+    background-image: url(../../assets/img/start-screen-gradient-background.jpg);
+    background-size: cover;
+    height: 908px;
+    padding: 27% 40px 0 40px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    column-gap: 40px;
+}
+
+.banner_info {
+    height: 100%;
+}
+
+.banner_title {
+    font-size: 44px;
+    line-height: 130%;
+    width: 310px;
+    color: #ffffff;
+    margin-bottom: 39px;
+}
+
+.banner_text {
+    font-family: 'Arial';
+    width: 460px;
+    font-size: 15px;
+    line-height: 160%;
+    color: #CDCDCD;
+    margin-bottom: 42px;
+}
+
+.banner_btn {
+    width: 207px;
+    height: 52px;
+    position: relative;
+    padding: 15px 40px;
+    letter-spacing: 0.06em;
+    background: #F1CDB3;
+    border-radius: 100px;
+    border: none;
+    font-size: 17px;
+    transition-duration: .2s;
+}
+
+.banner_btn a {
+    color: #292929;
+    text-decoration: none;
+}
+
+.banner_btn a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.banner_btn:hover {
+    cursor: pointer;
+    background-color: #FDDCC4;
+}
+
+.banner:after {
+    content: "";
+    display: inline-block;
+    width: 698px;
+    height: 728px;
+    background: url(../../assets/img/start-screen-puppy.png) center bottom/contain no-repeat;;
+}
+
+/*Блок about_us*/
+
+.about_us {
+    min-height: 588px;
+}
+
+.wrapper_about_us {
+    display: flex;
+    column-gap: 120px;
+    padding: 7% 10%;
+    justify-content: center;
+}
+
+.wrapper_about_us::before {
+    content: "";
+    width: 300px;
+    height: 408px;
+    background-image: url(../../assets/img/about-pets.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.about_us_text {
+    width: 430px;
+    padding-top: 10px;
+}
+
+.about_us_text h2 {
+    font-size: 35px;
+    width: 370px;
+    letter-spacing: 0.06em;
+    line-height: 45.5px;
+    color: #545454;
+    margin-bottom: 25px;
+}
+
+.about_us_text p {
+    font-family: 'Arial';
+    font-size: 15px;
+    line-height: 24px;
+    color: #4C4C4C;
+    margin-bottom: 25px;
+}
+
+.about_us_text p:last-child {
+    margin-bottom: 0;
+}
+
+/*Блок our_pets*/
+
+.our_pets {
+    width: 100%;
+}
+
+.wrapper_our_pets {
+    height: 877px;
+    margin: 0 auto;
+    background: #F6F6F6;
+    padding: 80px 40px 100px 40px;
+}
+
+.wrapper_our_pets h2 {
+    width: 450px;
+    font-size: 35px;
+    line-height: 45.5px;
+    letter-spacing: 0.06em;
+    color: #545454;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+.pets {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    align-items: center;
+}
+
+.pet {
+    width: 270px;
+    height: 435px;
+    background: #FAFAFA;
+    border-radius: 9px;
+    transition-duration: .5s;
+}
+
+.pet img {
+    margin-bottom: 26px;
+}
+
+.pet_name {
+    font-size: 20px;
+    color: #545454;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.pet_btn {
+    border-radius: 100px;
+    font-size: 17px;
+    color: #292929;
+    width: 190px;
+    height: 50px;
+    background-color: transparent;
+    margin-left: 35px;
+    border: 1px solid #F1CDB3;
+    transition-duration: .5s;
+}
+
+.pets_arrow {
+    width: 52px;
+    height: 52px;
+    border: 3px solid #FDDCC4;
+    background-color: transparent;
+    border-radius: 100%;
+    transition-duration: .5s;
+}
+
+.pets_arrow:hover {
+    cursor: pointer;
+    border: none;
+    background-color: #FDDCC4;
+}
+
+.pets_right_arrow {
+    transform: rotate(180deg);
+}
+
+.pets_btn {
+    width: 261px;
+    height: 52px;
+    background: #F1CDB3;
+    border-radius: 100px;
+    border: none;
+    margin: 0 auto;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition-duration: .5s;
+}
+
+.pets_btn:hover {
+    cursor: pointer;
+    background: #FDDCC4;
+}
+
+.pets_btn_link {
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    text-decoration: none;
+}
+
+.pets_btn_link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.pet:hover {
+    background-color: #FFF;
+    cursor: pointer;
+}
+
+.pet:hover .pet_btn {
+    cursor: pointer;
+    background-color: #FDDCC4;
+}
+
+/*Блок help*/
+
+.wrapper_help {
+    width: 100%;
+    min-height: 611px;
+    margin: 0 auto;
+    padding: 6% 6%;
+}
+
+.wrapper_help h2 {
+    width: 350px;
+    font-size: 35px;
+    line-height: 45.5px;
+    letter-spacing: 0.06em;
+    color: #545454;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+.help_items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: 60px;
+    column-gap: 69px;
+}
+
+.help_item {
+    text-align: center;
+    width: 170px;
+}
+
+.help_item svg {
+    margin-bottom: 25px;
+}
+
+.help_item p {
+    font-size: 20px;
+    color: #545454;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+}
+
+/*Блок donation*/
+
+.donation {
+    background: #F6F6F6;
+}
+
+.wrapper_donation {
+    width: 100%;
+    min-height: 462px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 63px 11% 80px 11%;
+    align-items: center;
+    column-gap: 30px;
+    row-gap: 30px;
+}
+
+.donation_info {
+    text-align: left;
+}
+
+.donation_info h2 {
+    width: 320px;
+    line-height: 45.5px;
+    letter-spacing: 0.06em;
+    font-size: 35px;
+    color: #545454;
+    margin-bottom: 20px;
+}
+
+.donation_bank_name {
+    margin-bottom: 20px;
+    font-size: 15px;
+    color: #545454;
+    letter-spacing: 0.06em;
+}
+
+.donation_credit_card {
+    display: flex;
+    justify-content: space-between;
+    width: 349px;
+    height: 43px;
+    background: #F1CDB3;
+    border-radius: 9px;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    position: relative;
+    transition-duration: .2s;
+}
+
+.donation_credit_card:hover {
+    background: #FDDCC4;
+}
+
+.donation_credit_card a {
+    font-size: 20px;
+    letter-spacing: 0.06em;
+    color: #545454;
+    text-decoration: none;
+}
+
+.donation_credit_card a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.donation_legal_info {
+    font-family: 'Arial';
+    font-size: 12px;
+    font-style: italic;
+    color: #B2B2B2;
+    width: 380px;
+    line-height: 18px;
+}
+
+.wrapper_donation:before {
+    content: "";
+    display: inline-block;
+    width: 505px;
+    height: 261px;
+    background-image: url(../../assets/img/donation-dog.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*Блок footer*/
+
+.footer {
+    min-height: 350px;
+    margin: 0 auto;
+    background-image: url(../../assets/img/footer-gradient-background_1280.jpg);
+    padding: 40px 40px 0 40px;
+}
+
+.footer_wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_block {
+    width: 289px;
+    display: inline-block;
+    padding-top: 16px;
+}
+
+.footer_link {
+    display: flex;
+}
+
+.footer_block_title {
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+    margin-bottom: 42px;
+}
+
+.footer_block div {
+    position: relative;
+}
+
+.footer_block p svg {
+    vertical-align: middle;
+}
+
+.footer_mail, .footer_tel, .footer_address {
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #F1CDB3;
+    padding-left: 15px;
+    text-decoration: none;
+}
+
+.footer_link {
+    align-items: center;
+}
+
+.first_link {
+    margin-bottom: 43px;
+}
+
+.third_link {
+    margin-bottom: 32px;
+}
+
+.second_header {
+    margin-bottom: 31px;
+}
+
+.footer_mail::before, .footer_tel::before, .footer_address::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.footer_address {
+    width: 275px;
+}
+
+.footer_wrapper::after {
+    content: "";
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    height: 310px;
+    background-image: url(../../assets/img/footer-puppy.png);
+}
+
+@media (max-width: 1100px) {
+    .pet_hidden_1100 {
+        display: none;
+    }
+
+    /**/
+
+    .banner {
+        height: 1165px;
+        padding: 200px 10% 0 10%;
+        flex-direction: column;
+        row-gap: 50px;
+    }
+
+    .banner_info {
+        height: 30%;
+        text-align: center;
+    }
+
+    .banner_title, .banner_text {
+        width: 100%;
+    }
+
+    /**/
+
+    .wrapper_about_us {
+        align-items: center;
+        row-gap: 50px;
+    }
+
+    .about_us_text {
+        width: 70%;
+    }
+
+    .about_us_text h2 {
+        width: 100%;
+    }
+
+    /**/
+
+    .wrapper_donation {
+        flex-direction: column-reverse;
+        
+    }
+
+    .donation_info {
+        width: 550px;
+        text-align: center;
+    }
+    .donation_info h2 {
+        width: 100%;
+    }
+
+    .donation_credit_card {
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    .donation_legal_info {
+        width: 100%;
+    }
+
+    /**/
+
+    .footer {
+        background-image: url(../../assets/img/footer-gradient-background_768.jpg);
+        background-size: cover;
+        padding: 30px 64px 0 64px;
+    }
+
+    .footer_block {
+        padding: 0;
+    }
+    
+	.footer_wrapper {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        column-gap: 61px;
+        row-gap: 66px;
+    }
+}
+
+@media (max-width: 850px) {
+	.header {
+		padding-top: 30px;
+    }
+    
+    .header_wrapper {
+        padding: 0 30px;
+    }
+
+    .banner {
+        padding: 150px 20% 0 20%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .banner_info {
+        height: 32%;
+        text-align: left;
+    }
+
+    .banner_title {
+        width: 310px;
+    }
+
+    .banner_text {
+        max-width: 460px;
+    }
+
+    .banner_btn {
+        left: 50%;
+        transform: translate(-50%, 0);
+        transition-duration: .5s;
+    }
+
+    .banner::after {
+        width: 90vw;
+        height: 90vh;
+        margin-left: 25px;
+    }
+
+    .wrapper_about_us {
+        padding: 9% 22% 13% 22%;
+        row-gap: 82px;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .about_us_text h2 {
+        max-width: 370px;
+    }
+
+    .about_us_text {
+        text-align: left;
+        width: 100%;
+    }
+
+    .wrapper_our_pets {
+        padding: 80px 30px 100px 30px;
+    }
+
+    .wrapper_help {
+        padding: 10% 6% 12% 6%;
+    }
+
+    .help_items {
+        column-gap: 60px;
+    }
+
+    .wrapper_donation {
+        padding: 10% 25% 14% 25%;
+        row-gap: 59px;
+    }
+
+    .donation_info {
+        width: 100%;
+        text-align: left;
+    }
+
+    .donation_info h2 {
+        max-width: 300px;
+    }
+
+    .donation_credit_card {
+        left: 0;
+        transform: initial;
+    }
+}
+
+@media (max-width: 760px) {
+    .burger {
+        display: inline-block;
+        margin-right: 43px;
+    }
+
+    .pet_hidden_760 {
+        display: none;
+    }
+
+    .header_list_nav {
+        position: absolute;
+        top: -30px;
+        right: -30px;
+        overflow-x: hidden;
+    }
+
+    .header_list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 47px;
+        z-index: 20;
+        visibility: hidden;
+        transform: translateX(100%);
+        width: 320px;
+        height: 100vh;
+        margin: 0;
+        padding: 257px 20px 0 20px;
+        background-color: #292929;
+        transition-duration: .5s;
+        overflow-X: hidden
+    }
+
+    .header_list_burger .header_list {
+        visibility: visible;
+        transform: translateX(0);
+        transition: .5s;
+    }
+
+    .header_list_item {
+        font-size: 32px;
+        font-family: Arial, sans-serif;
+        margin-right: 0;
+    }
+
+    .nav-list-item:first-child {
+        width: 75px;
+        margin: 0;
+    }
+
+    .nav-list-link {
+        font-size: 24px;
+    }
+
+    .header_logo_hidden {
+        visibility: hidden;
+    }
+
+    .header_logo_in-burger {
+        position: absolute;
+        right: 0;
+    }
+
+    .burger-menu_overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -10;
+    }
+
+    .header_list_burger .burger-menu_overlay {
+        display: block;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .logo_nav_in_burger {
+        justify-content: flex-end;
+        column-gap: 40px;
+    }
+}
+
+@media (max-width: 680px) {
+    .wrapper_donation:before {
+        width: 80vw;
+    }
+
+    .donation_credit_card {
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+}
+
+@media (max-width: 480px) {
+    .header_wrapper {
+        padding: 0 10px;
+    }
+
+    .header_logo_in_burger {
+        right: 113px;
+    }
+
+    .header_list_nav {
+        right: -10px;
+    }
+
+    .banner {
+        height: 823px;
+        padding: 150px 10px 0 10px;
+        row-gap: 93px;
+        align-items: center;
+    }
+
+    .banner_info {
+        height: 46%;
+        text-align: center;
+    }
+
+    .banner_title {
+        margin: 0 auto 42px auto;
+        letter-spacing: 0.06em;
+        font-size: 25px;
+        width: 220px;
+    }
+
+    .banner_text {
+        font-size: 15px;
+        width: 300px;
+    }
+
+    .banner_btn {
+        left: 0;
+        transform: initial;
+    }
+
+    .banner::after {
+        width: 260px;
+        height: 271px;
+        margin-left: 42px;
+    }
+
+    .wrapper_about_us {
+        padding: 42px 25px;
+    }
+
+    .about_us_text {
+        padding-top: 0;
+    }
+
+    .about_us_text h2 {
+        font-size: 25px;
+        text-align: center;
+        line-height: 130%;
+    }
+
+    .about_us_text p {
+        font-size: 15px;
+        text-align: justify;
+    }
+
+    .wrapper_about_us {
+        row-gap: 38px;
+    }
+
+    .wrapper_about_us::before {
+        width: 260px;
+        height: 353px;
+    }
+
+    .wrapper_our_pets {
+        height: 100%;
+        padding: 42px 9px;
+    }
+
+    .wrapper_our_pets h2 {
+        font-size: 25px;
+        width: 100%;
+        line-height: 130%;
+        margin-bottom: 42px;
+    }
+
+    .pets {
+        flex-direction: column;
+        position: relative;
+        height: 505px;
+        margin-bottom: 43px;
+    }
+
+    .pet {
+        order: -1;
+    }
+
+    .arrow_previous {
+        position: absolute;
+        left: 59px;
+        bottom: 0;
+    }
+
+    .arrow_next {
+        position: absolute;
+        right: 59px;
+        bottom: 0;
+    }
+
+    .wrapper_help {
+        padding: 42px 15px;
+    }
+
+    .wrapper_help h2 {
+        font-size: 25px;
+        width: 230px;
+        line-height: 130%;
+        margin-bottom: 42px;
+    }
+
+    .help_items {
+        column-gap: 30px;
+        row-gap: 30px;
+    }
+
+    .help_item {
+        width: 130px;
+    }
+
+    .help_item p {
+        font-size: 15px;
+    }
+
+    .help_item svg {
+        margin-bottom: 16px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .donation {
+        height: 540px;
+    }
+
+    .wrapper_donation {
+        padding: 42px 20px;
+        row-gap: 42px;
+    }
+
+    .donation_info h2 {
+        font-size: 25px;
+        margin: 0 auto 22px auto;
+        line-height: 130%;
+        max-width: 220px;
+        text-align: center;
+    }
+
+    .donation_bank_name {
+        font-size: 13px;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+    
+    .donation_credit_card {
+        width: inherit;
+        padding: 10px 5px;
+        width: 281px;
+        justify-content: space-evenly;
+    }
+
+    .donation_credit_card a {
+        font-size: 15px;
+    }
+
+    .donation_legal_info {
+        font-size: 12px;
+    }
+
+    .wrapper_donation::before {
+        width: 260px;
+        height: 135px;
+    }
+
+    .footer {
+        padding: 30px 10px 0 10px;
+    }
+
+    .footer_wrapper {
+        row-gap: 40px;
+    }
+
+    .footer_block {
+        text-align: center;
+    }
+
+    .footer_block_title {
+        font-size: 25px;
+    }
+
+    .footer_wrapper::after {
+        width: 260px;
+        height: 269px;
+        background-size: contain;
+    }
+
+    .footer_link {
+        justify-content: center;
+    }
+
+    .second_header {
+        margin-bottom: 38px;
+    }
+
+    .third_link {
+        margin-bottom: 40px;
+    }
+
+    .footer_address {
+        text-align: left;
+    }
+}
